@@ -3,7 +3,6 @@
 - 🔭 Hoje trabalho como desenvolvedor FullStack PHP + JavaScript
 - 🌱 Estudando Typescript
 - 📫 Contate-me no email: gabrielopfaria@gmail.com
-- 😄 Pronouns: ele/dele
 
 <div align="left">
   <a href="https://github.com/gabrielomena">
