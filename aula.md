@@ -30,4 +30,47 @@ Temos algumas informações importantes nesta tela:
 Primeiro aqui conseguimos ver o ip público que é por onde será acessado da internet
 ![image](https://user-images.githubusercontent.com/49401569/184733023-ac10c3b0-4de2-4314-b032-3f8503010865.png)
 
+Em métricas conseguimos ver o tráfego da rede, acesso e picos 
+![image](https://user-images.githubusercontent.com/49401569/184733742-a6f9b518-cd91-49b0-9e3c-2ed2e63f9814.png)
+
+Em redes verificamos as portas liberadas de acesso. OBS: NÃO LIBERE A PORTA DO SEU BANCO DE DADOS
+![image](https://user-images.githubusercontent.com/49401569/184733929-41d0f5e1-a91d-49f3-a1cd-9c682b8ca74f.png)
+Adidione a porta 443
+
+Em SnapShot é onde pode ser configurados backups 
+![image](https://user-images.githubusercontent.com/49401569/184734073-85ad9fee-57f0-4c0a-82ec-a870c17c58dc.png)
+
+Agora vamos acessar nossa máquina virtual, primeiro baixe sua chave da amazon:
+![image](https://user-images.githubusercontent.com/49401569/184734167-faf6c38a-5f09-4e98-a515-b5359a23e00e.png)
+
+Agora abra seu terminal e acesse a pasta onde está a chave (provavelmente em Downloads)
+para acessar a sua máquina use o seguinte comando
+ssh ubuntu@{SEU_IP_PUBLICO} -i {CHAVE}
+![image](https://user-images.githubusercontent.com/49401569/184734574-ac1df896-77a9-405c-8506-5f08b6226567.png)
+
+Confirme com yes
+Você verá uma tela parecida com essa:
+![image](https://user-images.githubusercontent.com/49401569/184734851-41ab6a4b-39ae-440b-a85b-bec199057f08.png)
+
+Próximo passo será instalar o docker em nossa máquina.
+Você pode está olhando a configuração completa do docker em: https://docs.docker.com/engine/install/ubuntu/
+
+Rode o seguintes comando:
+sudo apt-get install \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release
+------------------
+sudo mkdir -p /etc/apt/keyrings
+ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+------------------
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+------------------
+ sudo apt-get update
+ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+ 
+ 
 
